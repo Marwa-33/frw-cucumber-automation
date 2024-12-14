@@ -1,103 +1,129 @@
 package com.e2etests.automation.step_definitions;
 
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import com.e2etests.automation.page_objects.RegisterPage;
-import com.e2etests.automation.utils.Setup;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class RegisterStepDefinition {
 	
-	public WebDriver driver;
-	private RegisterPage registerpage;
-	
-	public RegisterStepDefinition() {
-		driver = Setup.getDriver();
-		this.registerpage = new RegisterPage();
-	}
+    private RegisterPage registerpage;
+     
+    public RegisterStepDefinition() {
+    	this.registerpage = new RegisterPage();
+    }
 
-	@Given("je suis sur la page de connexion Mercury")
-	public void jeSuisSurLaPageDeConnexionMercury() {
-		registerpage.goToURL();
-	}
-	@When("je clique sur le lien registre")
+	@When("Je clique sur le lien registre")
 	public void jeCliqueSurLeLienRegistre() {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(registerpage.lienregister);
 		registerpage.clickRegistre();
 	}
-	@When("je saisis firstName {string}")
-	public void jeSaisisFirstName(String firstname) {
+	@When("Je saisis le firstName {string}")
+	public void jeSaisisLeFirstName(String firstname) {
 		registerpage.fillFirstName(firstname);
 	}
-	@When("je saisis lastName {string}")
-	public void jeSaisisLastName(String lastname) {
+	@When("Je saisis un data dans le champs firstname {string}")
+	public void jeSaisisUnDataDansLeChampsFirstname(String firstname) {
+		registerpage.fillFirstName(firstname);
+	}
+	@When("Je saisis le lastName {string}")
+	public void jeSaisisLeLastName(String lastname) {
 		registerpage.fillLastName(lastname);
-	 
 	}
-	@When("je saisis phone {string}")
-	public void jeSaisisPhone(String phone) {
+	@When("Je saisis un data dans le champs lastname {string}")
+	public void jeSaisisUnDataDansLeChampsLastname(String lastname) {
+		registerpage.fillLastName(lastname);
+	}
+	@When("Je saisis le phone {string}")
+	public void jeSaisisLePhone(String phone) {
 		registerpage.fillPhone(phone);
-	    
 	}
-	@When("je saisis userName {string}")
-	public void jeSaisisUserName(String username) {
-		registerpage.fillUserName(username);
-	   
+	@When("Je saisis un data dans le champs phone {string}")
+	public void jeSaisisUnDataDansLeChampsPhone(String phone) {
+		registerpage.fillPhone(phone);
 	}
-	@When("je saisis address1 {string}")
-	public void jeSaisisAddress1(String adr) {
-		registerpage.fillAdresse(adr);
-	    
+	@When("Je saisis le userName {string}")
+	public void jeSaisisLeUserName(String uname) {
+		registerpage.fillUserName(uname);
 	}
-	@When("je saisis city {string}")
-	public void jeSaisisCity(String cityv) {
-		registerpage.fillCity(cityv);
-	   
+	@When("Je saisis un data dans le champs userName {string}")
+	public void jeSaisisUnDataDansLeChampsUserName(String uname) {
+		registerpage.fillUserName(uname);
 	}
-	@When("je saisis state {string}")
-	public void jeSaisisState(String stat) {
-		registerpage.fillState(stat);
-	    
+	@When("Je saisis l address1 {string}")
+	public void jeSaisisLAddress1(String adresse) {
+		registerpage.fillAdresse(adresse);  
 	}
-	@When("je saisis postalCode {string}")
-	public void jeSaisisPostalCode(String codep) {
-		registerpage.fillCodePostal(codep);
-
+	@When("Je saisis un data dans le champs address1 {string}")
+	public void jeSaisisUnDataDansLeChampsAddress1(String adresse) {
+		registerpage.fillAdresse(adresse);
 	}
-	@When("je saisis country {string}")
-	public void jeSaisisCountry(String string) {
-	    
+	@When("Je saisis le city {string}")
+	public void jeSaisisLeCity(String city) {
+		 registerpage.fillCity(city);
 	}
-	@When("je saisis email {string}")
-	public void jeSaisisEmail(String mail) {
-		registerpage.fillEmail(mail);
+	@When("Je saisis un data dans le champs city {string}")
+	public void jeSaisisUnDataDansLeChampsCity(String city) {
+		registerpage.fillCity(city);
 	}
-	@When("je saisis password {string}")
-	public void jeSaisisPassword(String pwd) {
-		registerpage.fillPassword(pwd);
-	    
+	@When("Je saisis le state {string}")
+	public void jeSaisisLeState(String state) {
+		registerpage.fillState(state);
 	}
-	@When("je saisis confirmPassword {string}")
-	public void jeSaisisConfirmPassword(String confpwd) {
-		registerpage.fillConfirmPassword(confpwd);
+	@When("Je saisis un data dans le champs state {string}")
+	public void jeSaisisUnDataDansLeChampsState(String state) {
+		registerpage.fillState(state);
 	}
-	@When("je clique sur le bouton envoyer")
+	@When("Je saisis la postalCode {string}")
+	public void jeSaisisLaPostalCode(String codepostal) {
+		registerpage.fillCodePostal(codepostal);
+	}
+	@When("Je saisis un data dans le champs postalCode {string}")
+	public void jeSaisisUnDataDansLeChampsPostalCode(String codepostal) {
+		registerpage.fillCodePostal(codepostal);
+	}
+	@When("Je choisie le country {string}")
+	public void jechoisieLeCountry(String country) {
+		registerpage.choisieCountry(country);
+	}
+	@When("Je choisie un data dans le champs country {string}")
+	public void jeChoisieUnDataDansLeChampsCountry(String country) {
+		registerpage.choisieCountry(country);
+	}
+	@When("Je saisis l email {string}")
+	public void jeSaisisLEmail(String email) {
+		registerpage.fillEmail(email);
+	}
+	@When("Je saisis un data dans le champs email {string}")
+	public void jeSaisisUnDataDansLeChampsEmail(String email) {
+		registerpage.fillEmail(email);
+	}
+	@When("Je saisis le Password {string}")
+	public void jeSaisisLePassword(String password) {
+		registerpage.fillPassword(password);
+	}
+	@When("Je saisis un data dans le champs password {string}")
+	public void jeSaisisUnDataDansLeChampsPassword(String password) {
+		registerpage.fillPassword(password);
+	}
+	@When("Je saisis le confirmPassword {string}")
+	public void jeSaisisLeConfirmPassword(String cpassword) {
+		registerpage.fillConfirmPassword(cpassword);
+	}
+	@When("Je saisis un data dans le champs confirmPassword {string}")
+	public void jeSaisisUnDataDansLeChampsConfirmPassword(String cpassword) {
+		registerpage.fillConfirmPassword(cpassword);
+	}
+	@When("Je clique sur le bouton envoyer")
 	public void jeCliqueSurLeBoutonEnvoyer() {
 		registerpage.ClickSubmitButton();
-	    
 	}
-	@Then("je me redirigee vers la page de confirmation de mon inscritption et un message de succes s affiche  {string}")
+	@Then("Je me redirigee vers la page de confirmation de mon inscritption et un message de succes s affiche  {string}")
 	public void jeMeRedirigeeVersLaPageDeConfirmationDeMonInscritptionEtUnMessageDeSuccesSAffiche(String text) {
-		String msg = registerpage.successMessage.getText();
-	    Assert.assertEquals(msg, text);
+	   
+		String message = registerpage.successMessage.getText();
+		Assert.assertEquals(message, text);
 	}
-
-
 
 }

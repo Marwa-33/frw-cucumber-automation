@@ -3,19 +3,19 @@ Feature: Je remplie le formulaire d inscription
 
   @registre
   Scenario: Je remplie le formulaire d inscription
-    Given je suis sur la page de connexion Mercury
-    When je clique sur le lien registre
-    And je saisis firstName "Marwa" 
-    And je saisis lastName "Lakrab"
-    And je saisis phone "26336963"
-    And je saisis userName "marwalak@gmail.com"
-    And je saisis address1 "21 rue mourouj "
-    And je saisis city "mourouj"
-    And je saisis state "ben arous"
-    And je saisis postalCode "2074"
-    And je saisis country "TUNISIA"
-    And je saisis email "TUNISIA"
-    And je saisis password "test123"
-    And je saisis confirmPassword "test123"
-    And je clique sur le bouton envoyer
-    Then je me redirigee vers la page de confirmation de mon inscritption et un message de succes s affiche  "Note: Your user name is"
+    Given Je me connecte sur l application Mercury
+    When Je clique sur le lien registre
+    And Je saisis le firstName "Marwa"
+    And Je saisis le lastName "Lakrab"
+    And Je saisis le phone "26336963"
+    And Je saisis le userName "marwalak@gmail.com"
+    And Je saisis l address1 "21 rue mourouj "
+    And Je saisis le city "mourouj"
+    And Je saisis le state "ben arous"
+    And Je saisis la postalCode "2074"
+    And Je choisie le country "TUNISIA"
+    And Je saisis l email "marwalak@gmail.com"
+    And Je saisis le password "test123"
+    And Je saisis le confirmPassword "test123"
+    And Je clique sur le bouton envoyer
+    Then Je me redirigee vers la page de confirmation de mon inscritption et un message de succes s affiche  "Note: Your user name is marwalak@gmail.com."
